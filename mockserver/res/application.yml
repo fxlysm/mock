@@ -1,0 +1,10 @@
+# 容器 配置
+server:
+  port: 443
+  ssl:
+    key-store: classpath:any.jks
+    key-password: 214174460510953
+  undertow:
+    worker-threads: 20
+    buffer-size: 512
+    io-threads: 2

@@ -1,0 +1,18 @@
+package com.mock.sign;
+
+public class Test {
+  String publicKey="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlr8a2OGVU1Cpz10IwuCI XQQN8O7Y0oiyXhFub7yCywX+ZRqLCN206GuC2OVsaVu4OS+afeZYMLalYBzKIteM JIUKwJsJpwa4WZNDKTU9qHLSU4He/unduXBTlQTn7vfP/Vn920t43UpUKT8tT+AW 6ehmRBtzO/2c3NNIQLbDgJQyr/c84yqeSd0cJ64lxRrxowKHuYK7W0FxQJQC60Ry rYj9//ppGlNdw76mgiOnifN36r29BXvz5Tsrlc8AvMLG7uW0sOd6UzNmDKOuERhK evWHdo12c7bMehLRclUQjypVrOeREnvXOX5jA/qqJsVCr8wBdKNmV6fkiJD58pDS cwIDAQAB";
+  String privateKey="-----BEGIN RSA PRIVATE KEY----- MIIEpQIBAAKCAQEAlr8a2OGVU1Cpz10IwuCIXQQN8O7Y0oiyXhFub7yCywX+ZRqL CN206GuC2OVsaVu4OS+afeZYMLalYBzKIteMJIUKwJsJpwa4WZNDKTU9qHLSU4He /unduXBTlQTn7vfP/Vn920t43UpUKT8tT+AW6ehmRBtzO/2c3NNIQLbDgJQyr/c8 4yqeSd0cJ64lxRrxowKHuYK7W0FxQJQC60RyrYj9//ppGlNdw76mgiOnifN36r29 BXvz5Tsrlc8AvMLG7uW0sOd6UzNmDKOuERhKevWHdo12c7bMehLRclUQjypVrOeR EnvXOX5jA/qqJsVCr8wBdKNmV6fkiJD58pDScwIDAQABAoIBABs3NWmikIsSLRY6 /bHxR61DZiDxfkPEWi+Rhha2Ogbddihaum9HV7n+bwkpooEDBieM6J+CTrm8v+6y Q+w2bh7Jxj8vvnZhSDcj1yRBcHhRApgBAnmTT2yDUxO8ZwNFyk87SBGndpK9MKSh u1SIaJqiUpRJQGy8RO25V3oXhQRZdggnI4vcKANFTR/Zk4HG4B5aOrxI5WJjdKca Qn2e40SNqMoFM0gLYD/eMR27DKqZDOAlx3BtpBuvDq1DBt4x+WRAO+GjDhGBgf7v 3wG/8u2Avj+1rIvOHjyL+6z/6hVVMcCcI67BhnL+JuzXQhtCBLj+H8hoO2uVF4YM y6lVEUECgYEA1DTVxiyRmjUFzMKbfXp1eb3SS8V74RI6zwlM+DeZFnKkK9f/m0JI kolAWISTCPR4R23ybtho/Rz7F9kAnrXP8EKMtBbwJW8atznxHXIUfSu46HFQgbaI ROg37MKlqSGjYpSc9DAlbegPvVZuJDfyzN075I3QzU6LwLa6uSJZQjcCgYEAtdtB wGJ7gcHQ5bLRgMEpUmUNEso7yDZ8s6SFUdgpWbt6xjhLLRpdWfUeN+xWwW0HDrWC ndYSsVgxUDm9gPvaRMv86mfLBubgAbk2gQILfWWouKDC1eWgjTlbqtpcVzeJ6XMJ Q9pvkeV/ZTlFlD6zTfJZkqJzqWWHY3Lj4+eRg6UCgYEAzjt69toht0iIlnMbQltd CC/ezRzkQ9y/oq5bS3BdK1/HBYUqOO22MhOJoX1WmIFe06yay/cuMa+Up5yR6ayw pcNHk04nnXnY8PEyz3crSmrPjbdykl2fGbjFgSe6cCDs9MWRtA+GkMXTZiM1b6Wg JlFr/7eDkcQgNe5gkcQ8EwkCgYEAr15rzrlpvtyHtSo27AHZ9lHqRIdvFQiuQpJR 2nYokhbAM6yPmkQFZ71/0ZAArXCVULLq7YhF6G1SyLmVrG+ysYtBL06+M76qoB7a l5fAOsGw7bJhkOFqbSW151HBoH23ab98XMmls7zrmFKdbXL1eCJQDJ7KCL4WzGk7 qEhkQ90CgYEAi6N4CK1FNSInLNfO35IkqL2a4J+lydwKdM0pPo1ZNTJFqicT5d+6 QRmTg0RK+QEJnrr8A3yweFzVkHxuE/HAMB8uYLXTR1l5XhtbLE2PJkxjSENx49jU 4SxYY0kOzCBDE2KLz382462y6uQ022J6W7pZlD/LGnwDIPaniBhHYG4= -----END RSA PRIVATE KEY-----";
+
+
+
+        public  void main(String[] args) {
+
+            String dataString="liuyong";
+
+            String sign=ChinaCardPosUtil.signByPrivate(dataString, privateKey, "UTF-8");
+            boolean a=ChinaCardPosUtil.verify(dataString, sign, publicKey, "UTF-8");
+            System.out.println(a);
+        }
+
+}
